@@ -1,0 +1,8 @@
+ <% if notice.present? %>
+<p class="alert alert-success">
+  <%= notice %>
+</p>
+<% end %>
+
+<%= render 'post', post: @post %>
+<%= image_tag(@post.picture_url, :width => 600) if @post.picture.present? %>
