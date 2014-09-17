@@ -5,4 +5,9 @@
 <% end %>
 
 <%= render 'post', post: @post %>
-<%= image_tag(@post.picture_url, :width => 600) if @post.picture.present? %>
+
+<% if @post.pictures.present? %>
+  <% @post.pictures.each do |picture| %>
+   <%= image_tag(picture.image, width: 600) %>
+  <% end %>
+<% end %>
