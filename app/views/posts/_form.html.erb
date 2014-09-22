@@ -22,6 +22,9 @@
   <%= f.fields_for :pictures do |picture_form| %>
     <div class="form-group">
     <%= picture_form.file_field :image %>
+
+    <script src="app/assets/dropzone.js"></script>
+
     </div>
   <% end %>
   <div class="form-group">
