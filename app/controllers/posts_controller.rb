@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate, except: [ :index, :show ]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   
   # GET /posts
@@ -9,6 +10,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
+
   end
 
   # GET /posts/new
@@ -60,5 +62,12 @@ class PostsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
     params.require(:post).permit(:title, :content, pictures_attributes: [:image])
+  end
+
+   private
+  def authenticate
+    authenticate_or_request_with_http_basic do |name, password|
+      name == "admin" && password == "secret"
+    end
   end
 end

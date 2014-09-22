@@ -8,6 +8,6 @@
 
 <% if @post.pictures.present? %>
   <% @post.pictures.each do |picture| %>
-   <%= image_tag(picture.image, width: 600) %>
+   <%= image_tag(picture.image, width: 500) %>
   <% end %>
 <% end %>

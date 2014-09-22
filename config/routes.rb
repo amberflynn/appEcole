@@ -1,5 +1,7 @@
 Crumblr::Application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :pictures
+  end
 
 
   get "about" => 'pages#about'
