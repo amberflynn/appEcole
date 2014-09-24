@@ -64,7 +64,8 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :content, pictures_attributes: [:image])
   end
 
-   private
+
+
   def authenticate
     authenticate_or_request_with_http_basic do |name, password|
       name == "admin" && password == "secret"
