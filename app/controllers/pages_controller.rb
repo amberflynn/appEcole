@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   end
 
   def welcome
-  	 @posts = Post.all
+  	 @posts = Post.all.sort_by_newest
   end
 end
