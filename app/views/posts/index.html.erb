@@ -7,24 +7,27 @@
       <th>Contenu</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
+
+  <div class="glyphicon glyphicon-plus-sign btn btn-default text-right pull-right">
+    <small>
+      <%= link_to 'Poster un nouvel article', new_post_path %>
+    </small>
+  </div>
   
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
         <td><%= truncate(post.content, length: 100) %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Etes-vous sûr(e) de vouloir supprimer ce post?' } %></td>
+        <td><%= link_to 'Voir', post %></td>
+        <td><%= link_to 'Editer', edit_post_path(post) %></td>
+        <td><%= link_to 'Supprimer', post, method: :delete, data: { confirm: 'Etes-vous sûr(e) de vouloir supprimer ce post?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Post', new_post_path %>

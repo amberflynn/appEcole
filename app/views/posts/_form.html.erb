@@ -17,19 +17,24 @@
     <%= f.label :titre %><br>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
+
   <div class="form-group">
     <%= f.label :contenu %><br>
     <%= f.text_area :content, class: 'form-control' %>
   </div>
-  <%= f.fields_for :pictures do |picture_form| %>
-    <div class="form-group">
-    <%= picture_form.file_field :image %>
-    </div>
-     <div class="dropzone-previews"></div> 
-  <% end %>
+
   <div class="form-group">
     <%= f.submit "Valider", class: 'btn btn-primary' %>
   </div>
-</div>
+
 <% end %>
+
+
+
+<form action="/pictures" id="media-dropzone" class="dropzone" enctype="multipart/form-data">
+ <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  <div class="fallback">
+    <input name="picture" type="file" multiple/>
+  </div>
+</form>
 
