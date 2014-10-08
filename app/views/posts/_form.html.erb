@@ -27,14 +27,19 @@
     <%= f.submit "Valider", class: 'btn btn-primary' %>
   </div>
 
+   <%= #f.fields_for :pictures do |picture_form| %>
+    <div class="form-group">
+    <%= #picture_form.file_field :image %>
+    </div>
+    <% end %>
+
 <% end %>
 
 
-
-<form action="/pictures" id="media-dropzone" class="dropzone" enctype="multipart/form-data">
+<form action="/media-upload" id="media-dropzone" class="dropzone" enctype="multipart/form-data">
  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
   <div class="fallback">
-    <input name="picture" type="file" multiple/>
+    <input name="file" type="file" multiple/>
   </div>
 </form>
 

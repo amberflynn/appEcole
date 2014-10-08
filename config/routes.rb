@@ -1,8 +1,10 @@
 Crumblr::Application.routes.draw do
   resources :posts do
+   # resources :thumb
    #   resources :pictures
   end
-  resources :pictures, only: [:create]
+   resources :pictures, only: [:create]
+
 
   get "about" => 'pages#about'
   root 'pages#welcome'

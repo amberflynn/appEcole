@@ -1,11 +1,8 @@
 
 class PicturesController < ApplicationController
- def index
-    @picture = Picture.all
-  end
 
 def create
-    @picture = Picture.new(picture_name: params[:file])
+    @picture = Picture.new(media_file_name: params[:file])
     if @picture.save!
 	  respond_to do |format|
 	    format.json{ render :json => @picture }
