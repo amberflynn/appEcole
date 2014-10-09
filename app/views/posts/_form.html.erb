@@ -27,9 +27,9 @@
     <%= f.submit "Valider", class: 'btn btn-primary' %>
   </div>
 
-   <%= #f.fields_for :pictures do |picture_form| %>
+   <%= f.fields_for :pictures do |picture_form| %>
     <div class="form-group">
-    <%= #picture_form.file_field :image %>
+    <%= picture_form.file_field :image %>
     </div>
     <% end %>
 
