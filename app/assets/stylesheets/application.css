@@ -11,3 +11,52 @@
  *= require_self
  *= require_tree .
  */
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Crafty+Girls);
+
+body {
+	background: #FFFAF0;
+}
+
+a {
+	color: #FF7F66;
+}
+
+a:hover {
+	color: #E6725C;
+}
+
+.nav > li > a:hover{
+color: #FFEECC;
+background-color: #FF7F66;
+}
+
+.btn-primary {
+color: #FF7F66;
+background-color: #FFDD99;
+border-color: #FFDD99;
+}
+
+.btn-primary:hover {
+color: #FFFAF0;
+background-color: #FF7F66;
+border-color: #FFDD99;
+}
+
+.spacer {
+margin: 10px 0 10px 0;
+}
+
+h1 {
+font-family: 'Crafty Girls', cursive;
+}
+
+.chat {
+background: url('maman.png');
+width: 180px;
+height: 193px;
+position: relative;
+}

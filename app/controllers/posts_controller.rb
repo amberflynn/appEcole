@@ -28,6 +28,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
+      params[:post][:images].each do |image|
+        picture = @post.pictures.build image: image
+        picture.save!
+      end
+
       redirect_to @post, notice: 'BRAVO!'
     else
       render action: 'new'
@@ -61,7 +66,7 @@ class PostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :content, pictures_attributes: [:image])
+    params.require(:post).permit(:title, :content)
   end
 
 
