@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      params[:post][:images].each do |image|
+      (params[:post][:images] || []).each do |image|
         picture = @post.pictures.build image: image
         picture.save!
       end
